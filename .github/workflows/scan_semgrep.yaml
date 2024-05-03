@@ -34,3 +34,10 @@ jobs:
             -F "branch_tag=${{ github.ref }}" \
             -F "commit_hash=$GITHUB_SHA" \
             -F "close_old_findings=true"
+      - name: Fix DefectDojo Findings with Pixeebot
+        uses: pixee/upload-tool-results-action@dca12668dd9cb999cd4a441e81ed67cb8d5d8b2d
+        with:
+          tool: defectdojo
+          defectdojo-token: ${{ secrets.DEFECTDOJO_TOKEN }}
+          defectdojo-api-url: ${{ secrets.DEFECTDOJO_URL }}
+          defectdojo-product-name: juiceshop_demo
