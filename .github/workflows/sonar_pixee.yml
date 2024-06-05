@@ -1,0 +1,16 @@
+name: "Publish Sonar JSON to Pixee"
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  share:
+    name: Upload Sonar Results to Pixeebot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pixee/upload-tool-results-action@v1
+        with:
+          tool: sonar
