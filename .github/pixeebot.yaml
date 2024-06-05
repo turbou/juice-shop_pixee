@@ -1,3 +1,0 @@
-codemods:
-  only:
-    - defectdojo:javascript/llm-sql-parameterization
